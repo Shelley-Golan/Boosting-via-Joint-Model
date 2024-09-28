@@ -9,7 +9,7 @@ def cycle(loader):
         for data in loader:
             yield data
 
-def get_data(imagenet_path, fake_images_path):
+def get_data(imagenet_path, batch_size, fake_images_path=None):
     # imagenet
     transform_train = tr.Compose([
         tr.Resize(256),
@@ -59,13 +59,13 @@ def get_data(imagenet_path, fake_images_path):
     # test dataset
     dset_test = ImageFolder(root=imagenet_path, transform=transform_test)
     print("loading train set")
-    dload_train_labeled = DataLoader(dset_train_labeled, batch_size=128, shuffle=True, num_workers=1,
+    dload_train_labeled = DataLoader(dset_train_labeled, batch_size=batch_size, shuffle=True, num_workers=1,
                                      drop_last=True, pin_memory=True)
-    dload_valid = DataLoader(dset_val, batch_size=128, shuffle=False, num_workers=1, drop_last=False, pin_memory=True)
-    dload_test = DataLoader(dset_test, batch_size=128, shuffle=False, num_workers=1, drop_last=False, pin_memory=True)
+    dload_valid = DataLoader(dset_val, batch_size=batch_size, shuffle=False, num_workers=1, drop_last=False, pin_memory=True)
+    dload_test = DataLoader(dset_test, batch_size=batch_size, shuffle=False, num_workers=1, drop_last=False, pin_memory=True)
 
     print("loading fakeset")
-    dload_fake = t.utils.data.DataLoader(fake_dataset, batch_size=128, shuffle=True, num_workers=1,
+    dload_fake = t.utils.data.DataLoader(fake_dataset, batch_size=batch_size, shuffle=True, num_workers=1,
                                              drop_last=True, pin_memory=True)
     dload_fake = cycle(dload_fake)
     print("done")
