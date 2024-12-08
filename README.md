@@ -10,6 +10,7 @@ The recently introduced Consistency models pose an efficient alternative to diff
 
 Checkpoint ResNet50 model [https://drive.google.com/file/d/1KTP2vL8cjK0OAL2CXIC53fREVg8pRisz/view?usp=sharing
 ](https://drive.google.com/file/d/1L6Nd3ldlu_rL6OIPvHioOI5iUewn0cfZ/view?usp=sharing)
+
 Checkpoint Wide-RN 50-2 model [https://drive.google.com/file/d/1KTP2vL8cjK0OAL2CXIC53fREVg8pRisz/view?usp=sharing](https://drive.google.com/file/d/1KTP2vL8cjK0OAL2CXIC53fREVg8pRisz/view?usp=sharing)
 
 ## Citation
